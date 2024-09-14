@@ -1,0 +1,93 @@
+/* Estilo general del contenedor de formulario */
+section {
+    width: 400px;
+    background: #f7f9fc;
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #003399;
+}
+
+p {
+    color: #6c757d;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas de los campos */
+label {
+    font-weight: 600;
+    color: #003399;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Estilo de los controles (input y select) */
+.controls {
+    width: 100%;
+    background: #ffffff;
+    padding: 12px;
+    border: 1px solid #1f53c5;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+/* Estilo del botón de envío */
+.botons {
+    width: 100%;
+    padding: 12px;
+    background-color: #003399;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botons:hover {
+    background-color: #002080;
+}
+
+/* Estilo para los campos readonly (solo lectura) */
+input[readonly] {
+    background-color: #e9ecef;
+    color: #495057;
+    cursor: not-allowed;
+}
+
+/* Estilo para el formulario básico (Información básica después de enviar) */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #1f53c5;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #003399;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}

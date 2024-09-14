@@ -1,0 +1,53 @@
+<!-- Formulario inicial -->
+<section *ngIf="!formSubmitted">
+    <h4>Formulario de Documento</h4>
+    <p>Todos los campos son obligatorios</p>
+    
+    <form [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+        <label for="document-type">Tipo de documento</label>
+        <select class="controls" formControlName="documentType" required>
+            <option value="">Seleccione un tipo de documento</option>
+            <option value="CC">Cédula de ciudadanía</option>
+            <option value="P">Pasaporte</option>
+        </select>
+        
+        <label for="document-number">Número de documento</label>
+        <input class="controls" type="text" formControlName="documentNumber" placeholder="Ingrese el número de documento" required>
+
+        <label for="apellido">Primer apellido</label>
+        <input class="controls" type="text" formControlName="apellido" placeholder="Ingrese su apellido" required>
+
+        <label for="nombre">Primer nombre</label>
+        <input class="controls" type="text" formControlName="nombre" placeholder="Ingrese su nombre" required>
+
+        <button class="botons" type="submit" [disabled]="documentForm.invalid">Enviar</button>
+    </form>
+</section>
+
+<!-- Información básica, visible solo después de enviar -->
+<section *ngIf="formSubmitted">
+    <h4>Información básica</h4>
+    <form>
+        <div class="form-group">
+            <label for="apellido">Primer apellido</label>
+            <input class="controls" type="text" id="apellido" name="apellido" [value]="documentForm.get('apellido')?.value" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label for="nombre">Primer nombre</label>
+            <input class="controls" type="text" id="nombre" name="nombre" [value]="documentForm.get('nombre')?.value" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="document-type">Tipo de documento</label>
+            <input class="controls" type="text" id="document-type" name="document-type" [value]="documentForm.get('documentType')?.value" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label for="document-number">Número de documento</label>
+            <input class="controls" type="text" id="document-number" name="document-number" [value]="documentForm.get('documentNumber')?.value" readonly>
+        </div>
+    </form>
+
+    <button class="botons" (click)="onReset()">Volver</button>
+</section>
